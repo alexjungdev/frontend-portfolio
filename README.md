@@ -1,6 +1,6 @@
 # 프론트엔드 개발자 포트폴리오
 
-![image](https://github.com/alexjungdev/FrontEnd-Developer-Portfolio/assets/157034113/6ab66331-ee81-4710-826a-873321d0094e)
+![image](https://github.com/alexjungdev/frontend-portfolio/assets/157034113/a9cb8f82-93cf-466e-bcfc-72a9fe16a587)
 
 ### 🔗포트폴리오 링크: https://alexjung-portfolio.vercel.app/
 <p/>프론트엔드 개발자가 되기 위한 포트폴리오 사이트입니다.
