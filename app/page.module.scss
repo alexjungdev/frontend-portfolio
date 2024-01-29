@@ -1,3 +1,7 @@
+$shadow_color: rgba(5, 5, 5, 0.75);
+$white_shadow_color: rgba(255, 255, 255, 0.8);
+
+
 @media (min-width: 1280px) {
     .main_gallery_container {
         margin-top: 3%;
@@ -393,7 +397,7 @@
 
     background: linear-gradient(45deg, #7f00ff, #e100ff, #00ddff, #7f00ff);
     background-size: 200% 200%;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 50px $white_shadow_color;
     animation: gradientAnimation 10s ease-in-out infinite;
 
     width: 100vw;
@@ -477,7 +481,6 @@
 
     max-width: 100%;
     max-height: 100%;
-    /* Maintain aspect ratio and cover the container */
 }
 
 .category_container {
@@ -507,7 +510,7 @@
     width: 100%;
     height: 100%;
 
-    box-shadow: 0 0 50px rgba(5, 5, 5, 0.75);
+    box-shadow: 0 0 50px $shadow_color;
 
     border: 0.1px solid white;
     border-radius: 5px;
@@ -534,7 +537,7 @@
     width: 100%;
     height: 100%;
 
-    box-shadow: 0 0 50px rgba(5, 5, 5, 0.75);
+    box-shadow: 0 0 50px $shadow_color;
 
     border: 1px solid white;
     border-radius: 10px;
@@ -552,7 +555,7 @@
     align-self: center;
 
 
-    box-shadow: 0 0 50px rgba(5, 5, 5, 0.75);
+    box-shadow: 0 0 50px $shadow_color;
 
     border: 1px solid white;
     border-radius: 5px;
@@ -641,19 +644,17 @@
 }
 
 .text{
-    &.large{
+    text-decoration: none;
+    user-select: none;
 
+    &.large{
         font-weight: bold;
-        text-decoration: none;
-        user-select: none;
     }
     &.medium{
-        text-decoration: none;
-        user-select: none;
+
     }
     &.small{
-        text-decoration: none;
-        user-select: none;
+
     }
   }
 
