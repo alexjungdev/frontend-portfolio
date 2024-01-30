@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "./header.module.css"
+import styles from "./header.module.scss"
 import GoToScroll from "@/components/scroll";
 
 import { useEffect } from 'react';
-import { motion, useAnimation, useScroll, useMotionValueEvent, useTransform } from 'framer-motion';
+import { motion, useAnimation, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from "next/link";
-import { usePathname} from 'next/navigation'; // => app 폴더를 사용하는 next13에서는 use client와 next/router 사용시 NextRouter was not mounted 에러 발생. next/navigation 이용.
+import { usePathname } from 'next/navigation'; // => app 폴더를 사용하는 next13에서는 use client와 next/router 사용시 NextRouter was not mounted 에러 발생. next/navigation 이용.
 
 export default function Header() {
     const { scrollY } = useScroll();
@@ -33,9 +33,33 @@ export default function Header() {
 
     })
 
-    const Navigate_URL = (target_url)=>{
-        window.open(target_url,"_blank");
-      }
+    const Navigate_URL = (target_url) => {
+        window.open(target_url, "_blank");
+    }
+
+    const HeaderBut_Home = (text, click_function) => {
+        return (
+            <motion.div className={`${styles.text} ${styles.sub}`}
+                animate={text_color} onClick={click_function}
+            >
+                {text}
+            </motion.div>
+        );
+    }
+
+    const HeaderBut_Project = (text, click_function) => {
+        return (
+            <Link href="/" style={{ textDecoration: 'none' }}>
+
+                <motion.div className={`${styles.text} ${styles.sub}`}
+
+                    animate={text_color} onClick={click_function}
+                >
+                    {text}
+                </motion.div>
+            </Link>
+        );
+    }
 
     return (
         <motion.div className={styles.header}
@@ -45,7 +69,7 @@ export default function Header() {
                 <div className={styles.sub_container}>
                     {pathname == "/" ?
                         (
-                            <motion.div className={styles.text_main}
+                            <motion.div className={`${styles.text} ${styles.main}`}
                                 animate={text_color} onClick={() => GoToScroll("top")}
                             >
                                 FrontEnd Portfolio
@@ -53,8 +77,8 @@ export default function Header() {
                         )
                         :
                         (
-                            <Link href="/" style={{textDecoration:'none'}}>
-                                <motion.div className={styles.text_main}
+                            <Link href="/" style={{ textDecoration: 'none' }}>
+                                <motion.div className={`${styles.text} ${styles.main}`}
                                     animate={text_color} onClick={() => GoToScroll("top")}
                                 >
                                     FrontEnd Portfolio
@@ -70,60 +94,19 @@ export default function Header() {
                     {pathname == "/" ?
                         (
                             <>
-                                <motion.div className={styles.text_sub}
-                                    animate={text_color} onClick={() => GoToScroll("about",0)}
-                                >
-                                    About
-                                </motion.div>
-
-                                <motion.div className={styles.text_sub}
-                                    animate={text_color} onClick={() => GoToScroll("skill",0)}
-                                >
-                                    Skills
-                                </motion.div>
-                                <motion.div className={styles.text_sub}
-                                    animate={text_color} onClick={() => GoToScroll("project",0)}
-                                >
-                                    Projects
-                                </motion.div>
-                                <motion.div className={styles.text_sub}
-                                    animate={text_color} onClick={() => Navigate_URL("https://alexjungdev.github.io/")}
-                                >
-                                    Blog
-                                </motion.div>
+                                {HeaderBut_Home("About", () => GoToScroll("about", 0))}
+                                {HeaderBut_Home("Skills", () => GoToScroll("skill", 0))}
+                                {HeaderBut_Home("Projects", () => GoToScroll("project", 0))}
+                                {HeaderBut_Home("Blog", () => Navigate_URL("https://alexjungdev.github.io/"))}
                             </>
                         )
-                        :     
+                        :
                         (
                             <>
-                                <Link href="/" style={{textDecoration:'none'}}>
-                                    <motion.div className={styles.text_sub}
-                                        animate={text_color} onClick={() => GoToScroll("about",100)}
-                                    >
-                                        About
-                                    </motion.div>
-                                </Link>
-                                <Link href="/" style={{textDecoration:'none'}}>
-                                    <motion.div className={styles.text_sub}
-                                        animate={text_color} onClick={() => GoToScroll("skill",100)}
-                                    >
-                                        Skills
-                                    </motion.div>
-                                </Link>
-                                <Link href="/" style={{textDecoration:'none'}}>
-                                    <motion.div className={styles.text_sub}
-                                        animate={text_color} onClick={() => GoToScroll("project",100)}
-                                    >
-                                        Projects
-                                    </motion.div>
-                                </Link>
-                                <Link href="/" style={{textDecoration:'none'}}>
-                                    <motion.div className={styles.text_sub}
-                                        animate={text_color} onClick={() => Navigate_URL("https://alexjungdev.github.io/")}
-                                    >
-                                        Blog
-                                    </motion.div>
-                                </Link>
+                                {HeaderBut_Project("About", () => GoToScroll("about", 100))}
+                                {HeaderBut_Project("Skills", () => GoToScroll("skill", 100))}
+                                {HeaderBut_Project("Projects", () => GoToScroll("project", 100))}
+                                {HeaderBut_Project("Blog", () => Navigate_URL("https://alexjungdev.github.io/"))}
                             </>
 
                         )
