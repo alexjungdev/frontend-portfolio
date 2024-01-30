@@ -39,7 +39,7 @@ export default function Header() {
 
     const HeaderBut_Home = (text, click_function) => {
         return (
-            <motion.div className={styles.text_sub}
+            <motion.div className={`${styles.text} ${styles.sub}`}
                 animate={text_color} onClick={click_function}
             >
                 {text}
@@ -50,7 +50,7 @@ export default function Header() {
     const HeaderBut_Project = (text, click_function) => {
         return (
             <Link href="/" style={{ textDecoration: 'none' }}>
-                <motion.div className={styles.text_sub}
+                <motion.div className={`${styles.text} ${styles.sub}`}
                     animate={text_color} onClick={click_function}
                 >
                     {text}
@@ -67,7 +67,7 @@ export default function Header() {
                 <div className={styles.sub_container}>
                     {pathname == "/" ?
                         (
-                            <motion.div className={styles.text_main}
+                            <motion.div className={`${styles.text} ${styles.main}`}
                                 animate={text_color} onClick={() => GoToScroll("top")}
                             >
                                 FrontEnd Portfolio
@@ -76,7 +76,7 @@ export default function Header() {
                         :
                         (
                             <Link href="/" style={{ textDecoration: 'none' }}>
-                                <motion.div className={styles.text_main}
+                                <motion.div className={`${styles.text} ${styles.main}`}
                                     animate={text_color} onClick={() => GoToScroll("top")}
                                 >
                                     FrontEnd Portfolio
