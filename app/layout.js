@@ -1,6 +1,6 @@
 
 import { IBM_Plex_Sans } from 'next/font/google';
-import './globals.css'
+import './globals.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header';
 import StyledComponentsRegistry from '@/components/registry';

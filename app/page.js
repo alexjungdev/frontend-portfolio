@@ -1,6 +1,6 @@
 "use client";
 
-import "./globals.css"
+import "./globals.scss"
 
 import {useState } from "react";
 import styles from './page.module.scss';
@@ -222,12 +222,8 @@ export default function Portfolio() {
 
         {CategoryText("About", styles.large, scroll_page1_text)}
 
-        {CategoryText(`안녕하세요.
-        신입 프론트엔드 개발자를 지원하는 정성헌입니다.
-        휴식을 취할때도 개발을 하며 휴식을 할 정도로 개발에 푹 빠져있습니다.
-        개발을 공부하는게 가장 재미있으며 문제를 해결하였을때의 성취감이 동기부여의 원천이 됩니다.
-
-        단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`, styles.small, scroll_page1_text)}
+        {CategoryText(`안녕하세요. 신입 프론트엔드 개발자를 지원하는 정성헌입니다. 휴식을 취할때도 개발을 하며 휴식을 할 정도로 개발에 푹 빠져있습니다. 개발을 공부하는게 가장 재미있으며 문제를 해결하였을때의 성취감이 동기부여의 원천이 됩니다. 단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`, 
+        styles.small, scroll_page1_text)}
 
         <div className={styles.main_gallery_container}>
           <motion.div className={styles.img_container}
