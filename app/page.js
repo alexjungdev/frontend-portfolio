@@ -2,15 +2,13 @@
 
 import "./globals.css"
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import {useState } from "react";
 import styles from './page.module.scss';
 import GoToScroll from "@/components/scroll";
 import { ShinyButton, Badge } from "@/components/pageStyle";
 
 import Link from 'next/link'
-import Router from "next/router";
-import { motion, useAnimation, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';//AnimatePresence는 언마운트할때의 anim을 추가할 수 있음(exit에서)
+import { motion, useAnimation, useScroll, useMotionValueEvent } from 'framer-motion';//AnimatePresence는 언마운트할때의 anim을 추가할 수 있음(exit에서)
 import { wrap } from "popmotion";
 
 
@@ -154,7 +152,7 @@ export default function Portfolio() {
     }
   })
 
-  const CategoryText = (text,text_size,animation) => {
+  const CategoryText = (text, text_size, animation) => {
     return (
       <motion.div className={`${styles.text} ${text_size}`} style={{ color: 'white' }}
         animate={animation}
@@ -182,9 +180,18 @@ export default function Portfolio() {
   const Skill_Item = (img_url, img_srcurl, alt_name) => {
     return (
       <motion.img width={200} height={200} src={img_url} srcSet={img_srcurl} alt={alt_name} className={styles.category_grid_item}
-        loading="lazy"
         whileHover={{ scale: [null, 1.5, 1.4] }}
         transition={{ duration: 0.3 }} />
+    );
+  }
+
+  const Skill_Badge = (text) => {
+    return (
+      <Badge className={styles.badge} style={{ color: 'white' }}>
+        <div className={styles.badge_text}>
+          {text}
+        </div>
+      </Badge>
     );
   }
 
@@ -210,12 +217,12 @@ export default function Portfolio() {
           initial={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.75 }}
         />
-        {CategoryText("About",styles.large,scroll_page1_text)}
+        {CategoryText("About", styles.large, scroll_page1_text)}
         {CategoryText(`안녕하세요.
         신입 프론트엔드 개발자를 지원하는 정성헌입니다.
         휴식을 취할때도 개발을 하며 휴식을 할 정도로 개발에 푹 빠져있습니다.
         개발을 공부하는게 가장 재미있으며 문제를 해결하였을때의 성취감이 동기부여의 원천이 됩니다.
-        단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`,styles.small,scroll_page1_text)}
+        단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`, styles.small, scroll_page1_text)}
         <div className={styles.main_gallery_container}>
           <motion.div className={styles.img_container}
             animate={scroll_page1_img}
@@ -230,7 +237,6 @@ export default function Portfolio() {
                 src={images[imageIndex].src}
                 srcSet={images[imageIndex].srcSet}
                 alt="Image Gallery"
-                loading="lazy"
                 custom={direction}
                 variants={variants}
                 initial="enter"
@@ -266,7 +272,7 @@ export default function Portfolio() {
       </div>
       <div id="skill" className={styles.main_container} style={{ flexDirection: 'column', marginTop: '15%' }}>
         <div className={styles.section_line} style={{ width: '90%' }} />
-        {CategoryText("Skills",styles.large,scroll_page2_title)}
+        {CategoryText("Skills", styles.large, scroll_page2_title)}
         <motion.div
           animate={scroll_page2_title}
           initial={{ opacity: 0, y: 100 }}
@@ -274,11 +280,7 @@ export default function Portfolio() {
         >
           <div className={styles.main_grid_container} style={{ marginTop: '5%' }}>
             <div className={styles.category_container}>
-              <Badge className={styles.badge} style={{ color: 'white' }}>
-                <div className={styles.badge_text}>
-                  Front-End
-                </div>
-              </Badge>
+            {Skill_Badge("Front-End")}
               <div className={styles.category_grid_container}>
                 {Skill_Item("/HTML.png", "/HTML.webp", "HTML")}
                 {Skill_Item("/CSS.png", "/CSS.webp", "CSS")}
@@ -290,33 +292,21 @@ export default function Portfolio() {
               </div>
             </div>
             <div className={styles.category_container}>
-              <Badge className={styles.badge} style={{ color: 'white' }}>
-                <div className={styles.badge_text}>
-                  Cloud-Service
-                </div>
-              </Badge>
+              {Skill_Badge("Cloud-Service")}
               <div className={styles.category_grid_container}>
                 {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare")}
                 {Skill_Item("/Azure.png", "/Azure.webp", "Azure")}
               </div>
             </div>
             <div className={styles.category_container}>
-              <Badge className={styles.badge} style={{ color: 'white' }}>
-                <div className={styles.badge_text}>
-                  Deployment
-                </div>
-              </Badge>
+            {Skill_Badge("Deployment")}
               <div className={styles.category_grid_container}>
                 {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare")}
                 {Skill_Item("/Vercel.png", "/Vercel.webp", "Vercel")}
               </div>
             </div>
             <div className={styles.category_container}>
-              <Badge className={styles.badge} style={{ color: 'white' }}>
-                <div className={styles.badge_text}>
-                  Tool
-                </div>
-              </Badge>
+            {Skill_Badge("Tools")}
               <div className={styles.category_grid_container}>
                 {Skill_Item("/Git.png", "/Git.webp", "Git")}
                 {Skill_Item("/Github.png", "/Github.webp", "Git")}
@@ -329,8 +319,8 @@ export default function Portfolio() {
       </div>
       <div id="project" className={styles.main_container} style={{ flexDirection: 'column', top: '6%', marginTop: '15%' }}>
         <div className={styles.section_line} style={{ width: '90%' }} />
-        {CategoryText("Projects",styles.large,scroll_page3_title)}
-        {CategoryText("Touch the projects!",styles.medium,scroll_page3_title)}
+        {CategoryText("Projects", styles.large, scroll_page3_title)}
+        {CategoryText("Touch the projects!", styles.medium, scroll_page3_title)}
         <div className={styles.main_project_container} style={{ marginTop: '10%' }}>
           <div className={styles.category_container}>
             <div className={styles.project_grid_container}>
@@ -342,7 +332,6 @@ export default function Portfolio() {
                 >
                   <Link href={`project${item.id}`}>
                     <motion.img width={500} height={1000} src={item.imgUrl} srcSet={item.webimgUrl} alt="project img" style={{ width: '100%', height: '100%' }} className={styles.project_grid_item}
-                      loading="lazy"
                       whileHover={{ scale: [null, 1.1, 1.1], filter: 'blur(10px) brightness(0.4)', backgroundColor: 'rgba(0, 0, 0, 0.25)' }}
                       transition={{ duration: 0.5 }}
                       onHoverStart={() => handleHoverStart(item.id)}
