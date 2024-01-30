@@ -50,7 +50,9 @@ export default function Header() {
     const HeaderBut_Project = (text, click_function) => {
         return (
             <Link href="/" style={{ textDecoration: 'none' }}>
+
                 <motion.div className={`${styles.text} ${styles.sub}`}
+
                     animate={text_color} onClick={click_function}
                 >
                     {text}

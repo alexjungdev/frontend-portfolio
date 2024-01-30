@@ -3,6 +3,7 @@
         height: 150px;
     }
 
+
     .text {
         &.main {
             font-size: 45px;
@@ -11,6 +12,7 @@
             font-size: 35px;
         }
     }
+
 
     .sub_container_grid {
         grid-template-columns: repeat(4, 1fr);
@@ -24,6 +26,7 @@
         height: 80px;
 
     }
+
 
     .text {
         &.main {
@@ -46,6 +49,7 @@
     .header {
         height: 65px;
     }
+
 
     .text {
         &.main {
@@ -94,6 +98,7 @@
         height: 30px;
     }
 
+
     .text {
         &.main {
             font-size: 9px;
@@ -122,6 +127,7 @@
     width: 100%;
 
     z-index: 50;
+
 
     /* Adjust the blur strength as needed(This is for the transparent) */
     backdrop-filter: blur(10px);
