@@ -45,8 +45,8 @@ export const ImageGallery = ({ carousel_items }) => {
         <CarouselContainer>
             <Carousel style={{ maxWidth: '100%' }}>
                 {carousel_items.map(item => (
-                    <Carousel.Item>
-                        <CarouselItem key={item.id} id_num={item.id} imgURL={item.imgUrl} imgWebURL={item.webimgUrl} />
+                    <Carousel.Item key={item.id}>
+                        <CarouselItem id_num={item.id} imgURL={item.imgUrl} imgWebURL={item.webimgUrl} />
                     </Carousel.Item>
                 ))}
             </Carousel>
