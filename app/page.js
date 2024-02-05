@@ -293,19 +293,20 @@ export default function Portfolio() {
                 {Skill_Item("/React_Native.png", "/React_Native.webp", "React_Native")}
                 {Skill_Item("/NextJS.png", "/NextJS.webp", "Next.jS")}
                 {Skill_Item("/StyledComponent.png", "/StyledComponent.webp", "Styled Component")}
+                {Skill_Item("/Tailwind.png", "/Tailwind.webp", "Tailwind CSS")}
               </div>
             </div>
             <div className={styles.category_container}>
               {Skill_Badge("Cloud-Service")}
               <div className={styles.category_grid_container}>
-                {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare")}
+                {Skill_Item("/Worker.png", "/Worker.webp", "Cloudflare Worker")}
                 {Skill_Item("/Azure.png", "/Azure.webp", "Azure")}
               </div>
             </div>
             <div className={styles.category_container}>
             {Skill_Badge("Deployment")}
               <div className={styles.category_grid_container}>
-                {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare")}
+                {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare Pages")}
                 {Skill_Item("/Vercel.png", "/Vercel.webp", "Vercel")}
               </div>
             </div>
