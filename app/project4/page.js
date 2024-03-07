@@ -42,7 +42,7 @@ export default function Project4() {
                     deployment={"AWS S3 / AWS Cloudfront"}
                     about_project={`오늘의 할일을 기록할 수 있는 웹사이트입니다. 여러가지 기술들을 익히고 AWS를 실제로 사용해보기 위해 만든 프로젝트입니다.
 
-                    소셜 로그인으로 많은 사람들이 사용하는 kakao, Google을 구현했습니다. Google은 제공되는 팝업 로그인 기능을 사용하였고 Kakao는 토큰을 받아서 백엔드 측에서 유저 정보를 받아온 다음 커스텀 토큰으로 로그인하는 방식을 사용했습니다.
+                    Rest API와 Firebase Functions를 이용하여 kakao Login, Google Login을 구현했습니다. Google은 제공되는 팝업 로그인 기능을 사용하였고 Kakao는 토큰을 받아서 백엔드 측에서 유저 정보를 받아온 다음 커스텀 토큰으로 로그인하는 방식을 사용했습니다.
 
                     로그인이 성공하면 기존의 기기에선 LocalStorage, 새 기기에선 NoSQL Database인 Firestore에서 유저ID에 따라 데이터를 불러오도록 했습니다.
 
