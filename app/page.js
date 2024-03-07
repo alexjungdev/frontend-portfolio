@@ -89,7 +89,15 @@ export default function Portfolio() {
 
   const projects = [
     {
-      id: 1,
+      id: 4,
+      imgUrl: '/todaystodo1.png',
+      webimgUrl: '/todaystodo1.webp',
+      title: '오늘의 할일',
+      type: 'Website',
+      date: '2024-02~2024-03'
+    },
+    {
+      id: 3,
       imgUrl: '/PF1.png',
       webimgUrl: '/PF1.webp',
       title: '포트폴리오 사이트',
@@ -105,7 +113,7 @@ export default function Portfolio() {
       date: '2023-12~2024-01'
     },
     {
-      id: 3,
+      id: 1,
       imgUrl: '/WG1.png',
       webimgUrl: '/WG1.webp',
       title: '글 생성기',
@@ -222,7 +230,7 @@ export default function Portfolio() {
 
         {CategoryText("About", styles.large, scroll_page1_text)}
 
-        {CategoryText(`안녕하세요. 신입 프론트엔드 개발자를 지원하는 정성헌입니다. 휴식을 취할때도 개발을 하며 휴식을 할 정도로 개발에 푹 빠져있습니다. 개발을 공부하는게 가장 재미있으며 문제를 해결하였을때의 성취감이 동기부여의 원천이 됩니다. 단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`, 
+        {CategoryText(`안녕하세요. 신입 프론트엔드 개발자를 지원하는 정성헌입니다. 휴식을 취할때도 개발을 하며 휴식을 할 정도로 개발에 푹 빠져있습니다. 개발을 공부하는게 가장 재미있으며 문제를 해결하였을때의 성취감이 동기부여의 원천이 됩니다. 단순한 개발을 넘어서 최적화된 사용자 경험, 원활한 서비스를 위한 운영까지 고려하는 개발자가 되고 싶습니다.`,
         styles.small, scroll_page1_text)}
 
         <div className={styles.main_gallery_container}>
@@ -297,10 +305,11 @@ export default function Portfolio() {
               </div>
             </div>
             <div className={styles.category_container}>
-              {Skill_Badge("Cloud-Service")}
+              {Skill_Badge("Back-End")}
               <div className={styles.category_grid_container}>
                 {Skill_Item("/Worker.png", "/Worker.webp", "Cloudflare Worker")}
                 {Skill_Item("/Azure.png", "/Azure.webp", "Azure")}
+                {Skill_Item("/Firebase.png", "/Firebase.webp", "Firebase")}
               </div>
             </div>
             <div className={styles.category_container}>
@@ -308,6 +317,7 @@ export default function Portfolio() {
               <div className={styles.category_grid_container}>
                 {Skill_Item("/Cloudflare.png", "/Cloudflare.webp", "Cloudflare Pages")}
                 {Skill_Item("/Vercel.png", "/Vercel.webp", "Vercel")}
+                {Skill_Item("/AWS.png", "/AWS.webp", "AWS")}
               </div>
             </div>
             <div className={styles.category_container}>
