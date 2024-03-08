@@ -150,7 +150,7 @@ export default function Portfolio() {
     }
 
 
-    if (latest >= (about_height + skill_height + project_height)) {
+    if (latest >= (about_height + skill_height + project_height - 250)) {
       scroll_page3_title.start({ opacity: 1, y: 0 })
     }
 
